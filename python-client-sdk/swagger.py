@@ -36,7 +36,7 @@ class ApiClient:
         else:
             raise Exception('Method ' + method + ' is not recognized.')
 
+        if response.status_code != 200:
+            raise Exception("Response " + str(response.status_code) + ": " + response.content)
         return response
         
-        
-
