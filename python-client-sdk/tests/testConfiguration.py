@@ -8,8 +8,7 @@
  ******************************************************************************/
 """
 from swagger import ApiClient
-# API_KEY = "addYourKeyHere"
-API_KEY = "58baa020-97b4-11e3-82ec-614a46604ad2"
+API_KEY = "addYourKeyHere"
 BASE_PATH="http://api.cortical.io/rest"
 RETINA_NAME = "en_associative"
 client = ApiClient(apiKey=API_KEY, apiServer=BASE_PATH)
