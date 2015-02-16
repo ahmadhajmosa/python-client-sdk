@@ -51,11 +51,11 @@ class TestClientTextApi(unittest.TestCase):
         fp = fpList[0]
         self.assertEqual(len(fpList), 1)
         self.assertNotEqual(fp, None)
-        self.assertNotEqual(len(fp.positions), 0)
+        self.assertGreater(len(fp.positions), 500)
 
     def testKeywords(self):
         termList = self.api.getKeywordsForText(testConfiguration.RETINA_NAME, inputText)
-        self.assertNotEquals(len(termList), 0)
+        self.assertGreater(len(termList), 2)
         self.assertTrue(isinstance(termList[0], unicode))
 
     def testTokenize(self):
@@ -68,13 +68,13 @@ class TestClientTextApi(unittest.TestCase):
         texts = self.api.getSlicesForText(testConfiguration.RETINA_NAME, inputText, True, 0, 2)
         self.assertEqual(len(texts), 2)
         self.assertEqual(texts[0].text.split(' ')[0], "George")
-        self.assertNotEqual(len(texts[0].fingerprint.positions), 0)
+        self.assertGreater(len(texts[0].fingerprint.positions), 100)
 
     def testBulk(self):
         fingerprints = self.api.getRepresentationsForBulkText(testConfiguration.RETINA_NAME, bulkText, 1.0)
         self.assertEqual(len(fingerprints), 6)
         for fp in fingerprints:
-            self.assertNotEqual(len(fp.positions), 0)
+            self.assertGreater(len(fp.positions), 100)
         
 if __name__ == "__main__":
     unittest.main()

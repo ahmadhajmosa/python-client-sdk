@@ -36,7 +36,7 @@ class TextApi(object):
         queryParams['retina_name'] = retina_name
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiFingerprint.Fingerprint(r) for r in response.json()]
+        return [apiFingerprint.Fingerprint(**r) for r in response.json()]
 
         
 
