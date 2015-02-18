@@ -38,7 +38,7 @@ class ExpressionsApi(object):
         queryParams['sparsity'] = sparsity
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return apiFingerprint.Fingerprint(response.json())
+        return apiFingerprint.Fingerprint(**response.json())
 
         
 
