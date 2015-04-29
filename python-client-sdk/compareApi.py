@@ -21,7 +21,7 @@ class CompareApi(object):
     def compare(self, retina_name, body, ):
         """Compare 2 elements
         Args:
-            body, ExpressionOperation: The comparison array to be evaluated (required)
+            body, ExpressionOperation: The JSON encoded comparison array to be evaluated (required)
             retina_name, str: The retina name (required)
             Returns: Metric
         """
