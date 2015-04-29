@@ -117,7 +117,7 @@ class TextApi(object):
     def getRepresentationsForBulkText(self, retina_name, body, sparsity=1.0):
         """Bulk get Fingerprint for text.
         Args:
-            body, ExpressionOperation: The expression to be evaluated (required)
+            body, ExpressionOperation: The JSON encoded expression to be evaluated (required)
             retina_name, str: The retina name (required)
             sparsity, float: Sparsify the resulting expression to this percentage (optional)
             Returns: Array[Fingerprint]
