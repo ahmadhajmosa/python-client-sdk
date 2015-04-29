@@ -21,7 +21,7 @@ class ImageApi(object):
     def getImageForExpression(self, retina_name, body, image_scalar=2, plot_shape="circle", image_encoding="base64/png", sparsity=1.0):
         """Get images for expressions
         Args:
-            body, ExpressionOperation: The expression to be evaluated (required)
+            body, ExpressionOperation: The JSON encoded expression to be evaluated (required)
             retina_name, str: The retina name (required)
             image_scalar, int: The scale of the image (optional) (optional)
             plot_shape, str: The image shape (optional) (optional)
@@ -51,7 +51,7 @@ class ImageApi(object):
     def getOverlayImage(self, retina_name, body, plot_shape="circle", image_scalar=2, image_encoding="base64/png"):
         """Get an overlay image for two expressions
         Args:
-            body, ExpressionOperation: The comparison array to be evaluated (required)
+            body, ExpressionOperation: The JSON encoded comparison array to be evaluated (required)
             retina_name, str: The retina name (required)
             plot_shape, str: The image shape (optional) (optional)
             image_scalar, int: The scale of the image (optional) (optional)
@@ -80,7 +80,7 @@ class ImageApi(object):
     def getImageForBulkExpressions(self, retina_name, body, get_fingerprint=None, image_scalar=2, plot_shape="circle", sparsity=1.0):
         """Bulk get images for expressions
         Args:
-            body, ExpressionOperation: The expression to be evaluated (required)
+            body, ExpressionOperation: The JSON encoded expression to be evaluated (required)
             get_fingerprint, bool: Configure if the fingerprint should be returned as part of the results (optional)
             retina_name, str: The retina name (required)
             image_scalar, int: The scale of the image (optional) (optional)
