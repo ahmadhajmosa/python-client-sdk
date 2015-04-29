@@ -21,7 +21,7 @@ class ExpressionsApi(object):
     def resolveExpression(self, retina_name, body, sparsity=1.0):
         """Resolve an expression
         Args:
-            body, ExpressionOperation: The expression to be evaluated (required)
+            body, ExpressionOperation: The JSON formatted encoded to be evaluated (required)
             retina_name, str: The retina name (required)
             sparsity, float: Sparsify the resulting expression to this percentage (optional)
             Returns: Fingerprint
@@ -45,7 +45,7 @@ class ExpressionsApi(object):
     def getContextsForExpression(self, retina_name, body, get_fingerprint=None, start_index=0, max_results=5, sparsity=1.0):
         """Get semantic contexts for the input expression
         Args:
-            body, ExpressionOperation: The expression to be evaluated (required)
+            body, ExpressionOperation: The JSON encoded expression to be evaluated (required)
             get_fingerprint, bool: Configure if the fingerprint should be returned as part of the results (optional)
             retina_name, str: The retina name (required)
             start_index, int: The start-index for pagination (optional) (optional)
@@ -75,7 +75,7 @@ class ExpressionsApi(object):
     def getSimilarTermsForExpressionContext(self, retina_name, body, context_id=None, pos_type=None, get_fingerprint=None, start_index=0, max_results=10, sparsity=1.0):
         """Get similar terms for the contexts of an expression
         Args:
-            body, ExpressionOperation: The expression to be evaluated (required)
+            body, ExpressionOperation: The JSON encoded expression to be evaluated (required)
             context_id, int: The identifier of a context (optional) (optional)
             pos_type, str: Part of speech (optional) (optional)
             get_fingerprint, bool: Configure if the fingerprint should be returned as part of the results (optional)
@@ -109,7 +109,7 @@ class ExpressionsApi(object):
     def resolveBulkExpression(self, retina_name, body, sparsity=1.0):
         """Bulk resolution of expressions
         Args:
-            body, ExpressionOperation: The expression to be evaluated (required)
+            body, ExpressionOperation: The JSON encoded expression to be evaluated (required)
             retina_name, str: The retina name (required)
             sparsity, float: Sparsify the resulting expression to this percentage (optional)
             Returns: Array[Fingerprint]
@@ -133,7 +133,7 @@ class ExpressionsApi(object):
     def getContextsForBulkExpression(self, retina_name, body, get_fingerprint=None, start_index=0, max_results=5, sparsity=1.0):
         """Bulk get contexts for input expressions
         Args:
-            body, ExpressionOperation: The expression to be evaluated (required)
+            body, ExpressionOperation: The JSON encoded expression to be evaluated (required)
             get_fingerprint, bool: Configure if the fingerprint should be returned as part of the results (optional)
             retina_name, str: The retina name (required)
             start_index, int: The start-index for pagination (optional) (optional)
@@ -163,7 +163,7 @@ class ExpressionsApi(object):
     def getSimilarTermsForBulkExpressionContext(self, retina_name, body, context_id=None, pos_type=None, get_fingerprint=None, start_index=0, max_results=10, sparsity=1.0):
         """Bulk get similar terms for input expressions
         Args:
-            body, ExpressionOperation: The expression to be evaluated (required)
+            body, ExpressionOperation: The JSON encoded expression to be evaluated (required)
             context_id, int: The identifier of a context (optional) (optional)
             pos_type, str: Part of speech (optional) (optional)
             get_fingerprint, bool: Configure if the fingerprint should be returned as part of the results (optional)
