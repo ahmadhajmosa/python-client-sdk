@@ -8,7 +8,7 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-class Fingerprint:
+class Fingerprint(object):
     def __init__(self, positions=None):
         #Get Fingerprint Positions.
         self.positions = positions # list[int]

@@ -10,7 +10,7 @@
 """
 from apiFingerprint import Fingerprint
 
-class Image:
+class Image(object):
     def __init__(self, fingerprint=None, image_data=None):
         #The semantic fingerprint representation.
         self.fingerprint = Fingerprint(**fingerprint) if isinstance(fingerprint, dict) else fingerprint # Fingerprint

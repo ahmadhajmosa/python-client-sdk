@@ -19,7 +19,7 @@ class CompareApi(object):
     
 
     def compare(self, retina_name, body, ):
-        """Compare 2 elements
+        """Compare elements
         Args:
             body, ExpressionOperation: The JSON encoded comparison array to be evaluated (required)
             retina_name, str: The retina name (required)
@@ -37,5 +37,26 @@ class CompareApi(object):
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
         return apiMetric.Metric(**response.json())
+
+
+    def compareBulk(self, retina_name, body):
+        """Bulk compare
+        Args:
+            body, ExpressionOperation: Bulk comparison of elements 2 by 2 (required)
+            retina_name, str: The retina name (required)
+            Returns: Array[Metric]
+        """
+
+        resourcePath = '/compare/bulk'
+        method = 'POST'
+
+        queryParams = {}
+        headerParams = {'Accept': 'Application/json', 'Content-Type': 'application/json'}
+        postData = None
+
+        queryParams['retina_name'] = retina_name
+        postData = body
+        response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
+        return [apiMetric.Metric(**r) for r in response.json()]
 
     

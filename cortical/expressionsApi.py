@@ -194,27 +194,3 @@ class ExpressionsApi(object):
 
 
         
-    def getSimilarTermsForSinglePosition(self, retina_name, position, ):
-        """Get similar terms for single bit position
-        Args:
-            position, int: A position in the retina space. (required)
-            retina_name, str: The retina name (required)
-            Returns: Array[Term]
-        """
-
-        resourcePath = '/expressions/similar_terms_bit'
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {'Accept': 'Application/json', 'Content-Type': 'application/json'}
-        postData = None
-
-        queryParams['retina_name'] = retina_name
-        queryParams['position'] = position
-        response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiTerm.Term(**r) for r in response.json()]
-
-
-    
-
-

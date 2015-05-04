@@ -8,7 +8,7 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from cortical.models import apiFingerprint, apiText
+from cortical.models import apiFingerprint, apiText, apiLanguageRest
 
 
 class TextApi(object):
@@ -137,4 +137,21 @@ class TextApi(object):
         return [apiFingerprint.Fingerprint(**r) for r in response.json()]
 
 
+    def getLanguage(self, body, ):
+        """Detect the language of a text
+        Args:
+            body, str: Your input text (UTF-8) (required)
+            Returns: LanguageRest
+        """
+
+        resourcePath = '/text/detect_language'
+        method = 'POST'
+
+        queryParams = {}
+        headerParams = {'Accept': 'Application/json', 'Content-Type': 'application/json'}
+        postData = None
+
+        postData = body
+        response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
+        return apiLanguageRest.LanguageRest(**response.json())
 

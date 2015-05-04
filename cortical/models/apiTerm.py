@@ -10,7 +10,7 @@
 """
 from apiFingerprint import Fingerprint
 
-class Term:
+class Term(object):
     def __init__(self, fingerprint=None, term=None, df=None, pos_types=None, score=None):
         #The Fingerprint of this term.
         self.fingerprint = Fingerprint(**fingerprint) if isinstance(fingerprint, dict) else fingerprint # Fingerprint

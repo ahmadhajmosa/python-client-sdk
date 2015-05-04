@@ -8,7 +8,7 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-class Metric:
+class Metric(object):
     def __init__(self, cosineSimilarity=None, jaccardDistance=None, overlappingAll=None, overlappingLeftRight=None, overlappingRightLeft=None, sizeLeft=None, sizeRight=None, weightedScoring=None, euclideanDistance=None):
         #Get Cosine-Similarity.
         self.cosineSimilarity = cosineSimilarity # float
