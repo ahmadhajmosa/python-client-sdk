@@ -8,7 +8,7 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from models import *
+from cortical.models import apiFingerprint, apiContext, apiTerm
 
 
 class ExpressionsApi(object):

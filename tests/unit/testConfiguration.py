@@ -7,7 +7,7 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from swagger import ApiClient
+from cortical.client import ApiClient
 API_KEY = "addYourKeyHere"
 BASE_PATH="http://api.cortical.io/rest"
 RETINA_NAME = "en_associative"

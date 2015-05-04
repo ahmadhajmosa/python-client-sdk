@@ -10,7 +10,7 @@
 """
 import unittest
 
-from textApi import TextApi
+from cortical.textApi import TextApi
 
 import testConfiguration
 

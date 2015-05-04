@@ -10,7 +10,7 @@
 """
 import unittest
 
-from expressionsApi import ExpressionsApi
+from cortical.expressionsApi import ExpressionsApi
 
 import testConfiguration as conf
 
@@ -22,7 +22,7 @@ class TestClientExpreissions(unittest.TestCase):
     def setUp(self):
         self.api = ExpressionsApi(conf.client)
         self.jsonBulkExpression = None
-        with open("bulkInput.json", "r") as f:
+        with open("tests/unit/bulkInput.json", "r") as f:
             self.jsonBulkExpression = "".join(f.readlines())
         
     def testExpressions(self):

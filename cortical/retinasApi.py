@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
 """
 /*******************************************************************************
  * Copyright (c) cortical.io GmbH. All rights reserved.
@@ -8,36 +8,33 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from models import *
+from cortical.models import apiRetina
 
 
-class CompareApi(object):
+class RetinasApi(object):
 
     def __init__(self, apiClient):
         self.apiClient = apiClient
 
     
 
-    def compare(self, retina_name, body, ):
-        """Compare 2 elements
+    def getRetinas(self, retina_name=None):
+        """Information about retinas
         Args:
-            body, ExpressionOperation: The JSON encoded comparison array to be evaluated (required)
-            retina_name, str: The retina name (required)
-            Returns: Metric
+            retina_name, str: The retina name (optional) (optional)
+            Returns: Array[Retina]
         """
 
-        resourcePath = '/compare'
-        method = 'POST'
+        resourcePath = '/retinas'
+        method = 'GET'
 
         queryParams = {}
         headerParams = {'Accept': 'Application/json', 'Content-Type': 'application/json'}
         postData = None
 
         queryParams['retina_name'] = retina_name
-        postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return apiMetric.Metric(**response.json())
+        return [apiRetina.Retina(**r) for r in response.json()]
 
-    
 
 

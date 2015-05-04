@@ -10,7 +10,7 @@
 """
 import unittest
 
-from compareApi import CompareApi
+from cortical.compareApi import CompareApi
 
 import testConfiguration
 

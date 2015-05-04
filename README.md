@@ -18,8 +18,8 @@ This page contains
 cortical.io's Python client - a simple Python http client which simplifies the communication with the Retina server using the Retina's <a href="http://api.cortical.io/">REST API</a>. 
 The source code is split into the following:
 
-* `/` Endpoint files - One for each endpoint group.
-* `/models` - The return object classes.
+* `/cortical` Endpoint files - One for each endpoint group.
+* `/cortical/models` - The return object classes.
 * `/tests` - Unit tests of all endpoints and examples of their usage.
 
 
@@ -38,8 +38,8 @@ To use the API you will need to obtain an <a href="http://www.cortical.io/develo
 You should now be able to use the client in the following way (obtaining a sementic representation of the term *apple*):
 
 ```python
-    from swagger import ApiClient
-    from termsApi import TermsApi
+    from cortical.client import ApiClient
+    from cortical.termsApi import TermsApi
 
     client = ApiClient(apiKey="your_api_key", apiServer="http://api.cortical.io/rest")
     api = TermsApi(client)
