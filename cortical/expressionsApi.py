@@ -8,7 +8,9 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from cortical.models import apiFingerprint, apiContext, apiTerm
+from cortical.models import fingerprint
+from cortical.models import term
+from cortical.models import context
 
 
 class ExpressionsApi(object):
@@ -38,7 +40,7 @@ class ExpressionsApi(object):
         queryParams['sparsity'] = sparsity
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return apiFingerprint.Fingerprint(**response.json())
+        return fingerprint.Fingerprint(**response.json())
 
         
 
@@ -68,7 +70,7 @@ class ExpressionsApi(object):
         queryParams['get_fingerprint'] = get_fingerprint
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiContext.Context(**r) for r in response.json()]
+        return [context.Context(**r) for r in response.json()]
 
         
 
@@ -102,7 +104,7 @@ class ExpressionsApi(object):
         queryParams['get_fingerprint'] = get_fingerprint
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiTerm.Term(**r) for r in response.json()]
+        return [term.Term(**r) for r in response.json()]
 
         
 
@@ -126,7 +128,7 @@ class ExpressionsApi(object):
         queryParams['sparsity'] = sparsity
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiFingerprint.Fingerprint(**r) for r in response.json()]
+        return [fingerprint.Fingerprint(**r) for r in response.json()]
 
         
 
@@ -156,7 +158,7 @@ class ExpressionsApi(object):
         queryParams['get_fingerprint'] = get_fingerprint
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [[apiContext.Context(**c) for c in r] for r in response.json()]
+        return [[context.Context(**c) for c in r] for r in response.json()]
 
         
 
@@ -190,7 +192,7 @@ class ExpressionsApi(object):
         queryParams['get_fingerprint'] = get_fingerprint
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [[apiTerm.Term(**t) for t in r] for r in response.json()]
+        return [[term.Term(**t) for t in r] for r in response.json()]
 
 
         

@@ -48,7 +48,7 @@ You should now be able to use the client in the following way (obtaining a semen
 ```
 
 For further documentation about the Retina-API and information on cortical.io's 'Retina' technology please see: 
-http://www.cortical.io/developers_tutorials.html. Also the `tests` folder contains more examples of how to use client. 
+http://www.cortical.io/developers_tutorials.html. Also the `tests` folder contains more examples of how to use the client. 
 
 If you have any questions or problems please visit our forum:
 http://www.cortical.io/developers_forum.html

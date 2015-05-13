@@ -9,7 +9,7 @@
  ******************************************************************************/
 """
 
-from cortical.models import apiCategoryFilter
+from cortical.models import categoryFilter
 
 
 class ClassifyApi(object):
@@ -40,7 +40,7 @@ class ClassifyApi(object):
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
             
-        return apiCategoryFilter.CategoryFilter(**response.json())
+        return categoryFilter.CategoryFilter(**response.json())
     
 
 

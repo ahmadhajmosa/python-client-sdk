@@ -8,7 +8,7 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from apiFingerprint import Fingerprint
+from cortical.models.fingerprint import Fingerprint
 
 class Text(object):
     def __init__(self, text=None, fingerprint=None):

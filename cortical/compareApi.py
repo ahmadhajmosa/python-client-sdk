@@ -8,7 +8,7 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from models import apiMetric
+from cortical.models import metric
 
 
 class CompareApi(object):
@@ -36,7 +36,7 @@ class CompareApi(object):
         queryParams['retina_name'] = retina_name
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return apiMetric.Metric(**response.json())
+        return metric.Metric(**response.json())
 
 
     def compareBulk(self, retina_name, body):
@@ -57,6 +57,6 @@ class CompareApi(object):
         queryParams['retina_name'] = retina_name
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiMetric.Metric(**r) for r in response.json()]
+        return [metric.Metric(**r) for r in response.json()]
 
     

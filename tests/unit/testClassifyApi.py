@@ -44,7 +44,7 @@ class TestClassifyApi(unittest.TestCase):
         expectedException = False
         try:
             self.classifyApi.createCategoryFilter(testConfiguration.RETINA_NAME, "Filter", 
-                                                  '"negativeExamples" : [{ "term" : "cable"} ]')
+                                                  '"negativeExamples" : [{ "text" : "cable"} ]')
         except Exception, e:
             expectedException = True
         self.assertTrue(expectedException)
