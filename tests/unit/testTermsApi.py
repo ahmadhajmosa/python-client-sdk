@@ -10,7 +10,7 @@
 """
 import unittest
 
-from termsApi import TermsApi
+from cortical.termsApi import TermsApi
 
 import testConfiguration
 

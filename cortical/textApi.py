@@ -8,7 +8,9 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from models import *
+from cortical.models import fingerprint
+from cortical.models import languageRest
+from cortical.models import text
 
 
 class TextApi(object):
@@ -36,7 +38,7 @@ class TextApi(object):
         queryParams['retina_name'] = retina_name
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiFingerprint.Fingerprint(**r) for r in response.json()]
+        return [fingerprint.Fingerprint(**r) for r in response.json()]
 
         
 
@@ -110,7 +112,7 @@ class TextApi(object):
         queryParams['get_fingerprint'] = get_fingerprint
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiText.Text(**r) for r in response.json()]
+        return [text.Text(**r) for r in response.json()]
 
         
 
@@ -134,7 +136,24 @@ class TextApi(object):
         queryParams['sparsity'] = sparsity
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiFingerprint.Fingerprint(**r) for r in response.json()]
+        return [fingerprint.Fingerprint(**r) for r in response.json()]
 
 
+    def getLanguage(self, body, ):
+        """Detect the language of a text
+        Args:
+            body, str: Your input text (UTF-8) (required)
+            Returns: LanguageRest
+        """
+
+        resourcePath = '/text/detect_language'
+        method = 'POST'
+
+        queryParams = {}
+        headerParams = {'Accept': 'Application/json', 'Content-Type': 'application/json'}
+        postData = None
+
+        postData = body
+        response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
+        return languageRest.LanguageRest(**response.json())
 

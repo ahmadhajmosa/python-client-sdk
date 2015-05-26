@@ -7,13 +7,14 @@
  * You shall use it only in accordance with the terms of the
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
-"""
-from apiFingerprint import Fingerprint
 
-class Image:
-    def __init__(self, fingerprint=None, image_data=None):
-        #The semantic fingerprint representation.
-        self.fingerprint = Fingerprint(**fingerprint) if isinstance(fingerprint, dict) else fingerprint # Fingerprint
-        #Image data in base64 encoding.
-        self.image_data = image_data # list[byte]
-        
+Add all of the modules in the current directory to __all__
+"""
+import os
+
+__all__ = []
+
+for module in os.listdir(os.path.dirname(__file__)):
+    if module != '__init__.py' and module[-3:] == '.py':
+        __all__.append(module[:-3])
+

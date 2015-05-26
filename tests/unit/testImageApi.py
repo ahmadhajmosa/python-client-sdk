@@ -10,7 +10,7 @@
 """
 import unittest
 
-from imageApi import ImageApi
+from cortical.imageApi import ImageApi
 
 import testConfiguration
 

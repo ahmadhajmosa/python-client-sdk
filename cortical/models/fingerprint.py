@@ -8,12 +8,8 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from apiFingerprint import Fingerprint
-
-class Text:
-    def __init__(self, text=None, fingerprint=None):
-        #The text as a string
-        self.text = text # str
-        #The semantic fingerprint representation of the text.
-        self.fingerprint = Fingerprint(**fingerprint) if isinstance(fingerprint, dict) else fingerprint # Fingerprint
+class Fingerprint(object):
+    def __init__(self, positions=None):
+        #Get Fingerprint Positions.
+        self.positions = positions # list[int]
         

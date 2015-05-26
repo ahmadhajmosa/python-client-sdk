@@ -8,7 +8,9 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from models import *
+from cortical.models import fingerprint
+from cortical.models import term
+from cortical.models import context
 
 
 class ExpressionsApi(object):
@@ -38,7 +40,7 @@ class ExpressionsApi(object):
         queryParams['sparsity'] = sparsity
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return apiFingerprint.Fingerprint(**response.json())
+        return fingerprint.Fingerprint(**response.json())
 
         
 
@@ -68,7 +70,7 @@ class ExpressionsApi(object):
         queryParams['get_fingerprint'] = get_fingerprint
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiContext.Context(**r) for r in response.json()]
+        return [context.Context(**r) for r in response.json()]
 
         
 
@@ -102,7 +104,7 @@ class ExpressionsApi(object):
         queryParams['get_fingerprint'] = get_fingerprint
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiTerm.Term(**r) for r in response.json()]
+        return [term.Term(**r) for r in response.json()]
 
         
 
@@ -126,7 +128,7 @@ class ExpressionsApi(object):
         queryParams['sparsity'] = sparsity
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiFingerprint.Fingerprint(**r) for r in response.json()]
+        return [fingerprint.Fingerprint(**r) for r in response.json()]
 
         
 
@@ -156,7 +158,7 @@ class ExpressionsApi(object):
         queryParams['get_fingerprint'] = get_fingerprint
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [[apiContext.Context(**c) for c in r] for r in response.json()]
+        return [[context.Context(**c) for c in r] for r in response.json()]
 
         
 
@@ -190,31 +192,7 @@ class ExpressionsApi(object):
         queryParams['get_fingerprint'] = get_fingerprint
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [[apiTerm.Term(**t) for t in r] for r in response.json()]
+        return [[term.Term(**t) for t in r] for r in response.json()]
 
 
         
-    def getSimilarTermsForSinglePosition(self, retina_name, position, ):
-        """Get similar terms for single bit position
-        Args:
-            position, int: A position in the retina space. (required)
-            retina_name, str: The retina name (required)
-            Returns: Array[Term]
-        """
-
-        resourcePath = '/expressions/similar_terms_bit'
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {'Accept': 'Application/json', 'Content-Type': 'application/json'}
-        postData = None
-
-        queryParams['retina_name'] = retina_name
-        queryParams['position'] = position
-        response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiTerm.Term(**r) for r in response.json()]
-
-
-    
-
-

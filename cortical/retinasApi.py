@@ -8,7 +8,7 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from models import *
+from cortical.models import retina
 
 
 class RetinasApi(object):
@@ -34,7 +34,7 @@ class RetinasApi(object):
 
         queryParams['retina_name'] = retina_name
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiRetina.Retina(**r) for r in response.json()]
+        return [retina.Retina(**r) for r in response.json()]
 
 
 

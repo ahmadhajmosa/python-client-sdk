@@ -8,7 +8,8 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from models import *
+from cortical.models.term import Term
+from cortical.models import context
 
 
 class TermsApi(object):
@@ -42,7 +43,7 @@ class TermsApi(object):
         queryParams['max_results'] = max_results
         queryParams['get_fingerprint'] = get_fingerprint
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiTerm.Term(**r) for r in response.json()]
+        return [Term(**r) for r in response.json()]
 
         
 
@@ -70,7 +71,7 @@ class TermsApi(object):
         queryParams['max_results'] = max_results
         queryParams['get_fingerprint'] = get_fingerprint
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiContext.Context(**r) for r in response.json()]
+        return [context.Context(**r) for r in response.json()]
 
         
 
@@ -102,7 +103,7 @@ class TermsApi(object):
         queryParams['pos_type'] = pos_type
         queryParams['get_fingerprint'] = get_fingerprint
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiTerm.Term(**r) for r in response.json()]
+        return [Term(**r) for r in response.json()]
 
 
 

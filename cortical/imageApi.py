@@ -8,7 +8,7 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from models import *
+from cortical.models import image
 
 
 class ImageApi(object):
@@ -103,7 +103,7 @@ class ImageApi(object):
         queryParams['get_fingerprint'] = get_fingerprint
         postData = body
         response = self.apiClient._callAPI(resourcePath, method, queryParams, postData, headerParams)
-        return [apiImage.Image(**r) for r in response.json()]
+        return [image.Image(**r) for r in response.json()]
 
 
 

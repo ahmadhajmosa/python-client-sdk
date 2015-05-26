@@ -10,7 +10,7 @@
 """
 import unittest
 
-from textApi import TextApi
+from cortical.textApi import TextApi
 
 import testConfiguration
 
@@ -75,6 +75,11 @@ class TestClientTextApi(unittest.TestCase):
         self.assertEqual(len(fingerprints), 6)
         for fp in fingerprints:
             self.assertGreater(len(fp.positions), 100)
+        
+    def testLanguageDetection(self):
+        self.assertEqual(self.api.getLanguage("I have a dream!").language, "English")
+        self.assertEqual(self.api.getLanguage("Ich bin ein").wiki_url, "http://en.wikipedia.org/wiki/German_language")
+        self.assertEqual(self.api.getLanguage("Der var så dejligt ude på landet.").iso_tag, "da")
         
 if __name__ == "__main__":
     unittest.main()

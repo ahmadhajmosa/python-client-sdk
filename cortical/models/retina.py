@@ -8,7 +8,7 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-class Retina:
+class Retina(object):
     def __init__(self, retinaName=None, numberOfTermsInRetina=None, numberOfRows=None, numberOfColumns=None, description=None):
         #The identifier of a specific retina
         self.retinaName = retinaName # str

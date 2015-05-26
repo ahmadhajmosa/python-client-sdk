@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 /*******************************************************************************
  * Copyright (c) cortical.io GmbH. All rights reserved.
@@ -8,8 +7,8 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-class Fingerprint:
-    def __init__(self, positions=None):
-        #Get Fingerprint Positions.
-        self.positions = positions # list[int]
-        
+from cortical.client import ApiClient
+API_KEY = "addYourKeyHere"
+BASE_PATH="http://api.cortical.io/rest"
+RETINA_NAME = "en_associative"
+client = ApiClient(apiKey=API_KEY, apiServer=BASE_PATH)

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 /*******************************************************************************
  * Copyright (c) cortical.io GmbH. All rights reserved.
@@ -7,8 +8,12 @@
  * license agreement you entered into with cortical.io GmbH.
  ******************************************************************************/
 """
-from swagger import ApiClient
-API_KEY = "addYourKeyHere"
-BASE_PATH="http://api.cortical.io/rest"
-RETINA_NAME = "en_associative"
-client = ApiClient(apiKey=API_KEY, apiServer=BASE_PATH)
+
+class CategoryFilter(object):
+
+    def __init__(self, categoryName=None, positions=None):
+        #The descriptive label for a CategoryFilter name
+        self.categoryName = categoryName # str
+        #The positions of a Fingerprint
+        self.positions = positions # list[int]
+        

@@ -9,7 +9,7 @@
 """
 import unittest
 
-from retinasApi import RetinasApi
+from cortical.retinasApi import RetinasApi
 
 import testConfiguration
 
