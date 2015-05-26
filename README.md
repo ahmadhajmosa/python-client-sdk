@@ -2,7 +2,7 @@ cortical.io
 ===========
 Welcome to the cortical.io Retina Python client source code page.
 
-Release Version: 2.1.0
+Release Version: 2.2.0
 
 This page contains
 <UL>
@@ -38,13 +38,13 @@ To use the API you will need to obtain an <a href="http://www.cortical.io/develo
 You should now be able to use the client in the following way (obtaining a sementic representation of the term *apple*):
 
 ```python
-    from cortical.client import ApiClient
-    from cortical.termsApi import TermsApi
+from cortical.client import ApiClient
+from cortical.termsApi import TermsApi
 
-    client = ApiClient(apiKey="your_api_key", apiServer="http://api.cortical.io/rest")
-    api = TermsApi(client)
-    terms = api.getTerm("en_associative", term="apple", get_fingerprint=True)
-    print terms[0].fingerprint.positions
+client = ApiClient(apiKey="your_api_key", apiServer="http://api.cortical.io/rest")
+api = TermsApi(client)
+terms = api.getTerm("en_associative", term="apple", get_fingerprint=True)
+print terms[0].fingerprint.positions
 ```
 
 For further documentation about the Retina-API and information on cortical.io's 'Retina' technology please see: 
@@ -54,6 +54,11 @@ If you have any questions or problems please visit our forum:
 http://www.cortical.io/developers_forum.html
 
 ### Change Log
+<B>v 2.2.0</B>
+ * new Classfiy api with /classify/create_category_filter
+ * new /text/detect_language endpoint
+ * new /compare/bulk endpoint
+
 <B>v 2.1.0</B>
 * Initial release version.
 
