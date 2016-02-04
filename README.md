@@ -1,5 +1,12 @@
-cortical.io
-===========
+# [DEPRECATED] python-client-sdk
+
+This library is deprecated and no longer actively developed. It has been replaced by 
+[retina-sdk.py](https://github.com/cortical-io/retina-sdk.py).
+
+
+
+## cortical.io
+
 Welcome to the cortical.io Retina Python client source code page.
 
 Release Version: 2.2.0
